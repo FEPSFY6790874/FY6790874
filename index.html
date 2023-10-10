@@ -2,17 +2,17 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>University of Surrey Engineering</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="icon" href="Logo_surrey.png">
     <style>
-        /* Define CSS styles for the table */
-        table {
+      table {
             width: 30%;
             border-collapse: collapse;
         }
-        table, th,td,tr {
+
+        table,
+        th,
+        td,
+        tr {
             border: 1px solid black;
         }
 
@@ -26,72 +26,348 @@
             background-color: #f2f2f2;
         }
 
-        /* CSS for paragraph with class 'ex1' */
         p.ex1 {
             margin-left: 250px;
+            width: 80%;
+            white-space: pre-line;
+        }
+
+        .mySlides {
+            display: none;
         }
     </style>
-    <style>
-        .mySlides {display:none;}
-    </style>
-</head>
 
-<body style="background-color:#FFFFFF;margin-left:50px;">
+  </head>
+  <body>
     <img src="Unknown.png" alt="something gone wrong" width="1200" height="300">
-    <h2>Student URN: 6790874</h2>
+    <h2>Civil Eng</h2>
     <h1><b>ENG0018 Computer lab 2023/24</b></h1>
     <h2 style="font-family: Calibri;"><b>Conference paper: Bridge Types</b></h2>
 
-    <table >
-        <tr>
-            <th>Bridge</th>
-            <th>Header 2</th>
-            <th>Header 3</th>
-        </tr>
-        <tr>
-            <td>Data 1</td>
-            <td>Data 2</td>
-            <td>Data 3</td>
-        </tr>
-        <tr>
-            <td>Data 4</td>
-            <td>Data 5</td>
-            <td>Data 6</td>
-        </tr>
-    </table>
-    <br>
+    <!-- Table structure -->
     <table>
-        <tr>
-            <th> Table of Contents </th>
-        </tr>
-        <tr>
-            <td><a href="Abstract">Abstract </td>
-        </tr>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+      <tr>
+        <td>Data 1</td>
+        <td>Data 2</td>
+        <td>Data 3</td>
+      </tr>
+      <tr>
+        <td>Data 4</td>
+        <td>Data 5</td>
+        <td>Data 6</td>
+      </tr>
     </table>
-    <p id="date&time"></p>
-<script>
-//Javascript to display the date and time on my webpage
-const d = new Date();
-document.getElementById("date&time").innerHTML = d;
-</script> 
+
+    <!-- Elements with the class "mySlides" will be hidden -->
     <div class="mySlides">
-        <p>Slide 1 Content</p>
+      <p>Slide 1 Content</p>
     </div>
     <div class="mySlides">
-        <p>Slide 2 Content</p>
+      <p>Slide 2 Content</p>
     </div>
 
+    <script>
+      // JavaScript code to control the visibility of slides
+    </script>
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="icon" href="Logo_surrey.png">
+    <style>
+      /* Define CSS styles for the table */
+      table {
+        width: 30%; /* Set table width to 30% of its container */
+        border-collapse: collapse; /* Collapse table borders */
+      }
+
+      th, td {
+        padding: 8px; /* Add padding to table cells */
+        text-align: left; /* Align text to the left within cells */
+        border-bottom: 1px solid #ddd; /* Add a bottom border to cells */
+      }
+
+      th {
+        background-color: #f2f2f2; /* Background color for header cells */
+      }
+
+      /* CSS for paragraph with class 'ex1' */
+      p.ex1 {
+        margin-left: 250px;
+      }
+
+      /* Additional styles for body */
+      body {
+        background-color: #FFFFFF;
+        margin-left: 50px;
+      }
+    </style>
+    <!-- Table of Contents -->
+    <table>
+      <tr>
+        <th> Table of Contents </th>
+      </tr>
+      <tr>
+        <td><a href="#Abstract">Abstract</a></td>
+      </tr>
+    </table>
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+    <!-- Horizontal rule -->
     <hr>
+
+    <!-- Section with an id of "Abstract" -->
     <h3 id="Abstract">Abstract</h3>
-    <p class="ex1">
-        <pre>
+<p class="ex1">
+      <pre>
         This paper explores various types of bridges in civil engineering, focusing on their design, construction, and impact on connectivity and urban development. 
         Bridges play a crucial role in enhancing transportation by providing safe and efficient passage over obstacles such as rivers, valleys, and other transportation routes.
         The study reviews the characteristics, applications, and advantages of different bridge types including beam bridges, arch bridges, truss bridges, and suspension bridges, with a focus on their relevance in modern civil engineering projects.
-        </pre>
+      </pre>
     </p>
-    
+
     <!-- Add similar sections for Introduction, Analysis and Discussion as needed -->
-</body>
+
+
+    <!-- Display date and time using JavaScript -->
+    <p id="date&time"></p>
+    <script>
+      const d = new Date();
+      document.getElementById("date&time").innerHTML = d;
+    </script>
+
+    <!-- Button to change color -->
+    <button id="colorButton">Click me to change color</button>
+    <script>
+      // Get a reference to the button element
+      var button = document.getElementById("colorButton");
+      // Function to change the button color
+      function changeColor() {
+        // Generate a random color (hexadecimal)
+        var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+        // Set the button's background color to the random color
+        button.style.backgroundColor = randomColor;
+      }
+      // Add a click event listener to the button
+      button.addEventListener("click", changeColor);
+    </script>
+
+    <!-- Button to generate random number -->
+    <button id="randomNumberButton">Generate Random Number</button>
+    <p id="randomNumberDisplay"></p>
+    <script>
+      // Get a reference to the button element
+      var randomNumberButton = document.getElementById("randomNumberButton");
+      // Get a reference to the paragraph where the random number will be displayed
+      var randomNumberDisplay = document.getElementById("randomNumberDisplay");
+      // Function to generate and display a random number between 1 and 10
+      function generateRandomNumber() {
+        var randomNum = Math.floor(Math.random() * 10) + 1;
+        randomNumberDisplay.innerHTML = "Random Number: " + randomNum;
+      }
+      // Add a click event listener to the button
+      randomNumberButton.addEventListener("click", generateRandomNumber);
+    </script>
+
+    <button onclick="generateRandomWord()">Click me for a random word</button>
+    <p id="wordOutput"></p>
+    <script>
+        function generateRandomWord() {
+            var words = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'civil engineering'];
+            var randomWord = words[Math.floor(Math.random() * words.length)];
+            document.getElementById('wordOutput').textContent = randomWord;
+        }
+    </script>
+
+    <!-- Google Charts API integration -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', { 'packages': ['corechart'] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work', 8],
+          ['Sleep', 8],
+          ['Eat', 2],
+          ['Study', 4],
+          ['Exercise', 2]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    <div id="chart_div" style="width: 400px; height: 300px;"></div>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Age');
+            data.addColumn('number', 'Salary');
+            data.addRows([
+                [25, 40000],
+                [30, 50000],
+                [35, 60000],
+                [40, 75000],
+                [45, 80000],
+                [50, 90000]
+            ]);
+
+            var options = {
+                title: 'Age vs. Salary',
+                hAxis: { title: 'Age' },
+                vAxis: { title: 'Salary' }
+            };
+
+            var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+    <div id="chart_div" style="width: 400px; height: 300px;"></div>
+
+    <!-- Additional consolidation tasks -->
+    <script type="text/javascript">
+      google.charts.load('current', { 'packages': ['corechart'] });
+      google.charts.setOnLoadCallback(drawLineChart);
+
+      function drawLineChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Year');
+        data.addColumn('number', 'London');
+        data.addColumn('number', 'Birmingham');
+        data.addColumn('number', 'Edinburgh');
+        data.addRows([
+          [2013, 8414000, 1092200, 495000],
+          [2015, 8661000, 1113000, 507000],
+          [2017, 8916000, 1137100, 519000],
+          [2019, 9177000, 1141800, 531000],
+          [2021, 9426000, 1142500, 543000],
+          [2023, 9648000, 1153900, 554000]
+        ]);
+
+        var options = {
+          title: 'Population Trend Over the Past 10 Years',
+          hAxis: { title: 'Year' },
+          vAxis: { title: 'Population' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    <div id="line_chart_div" style="width: 800px; height: 400px;"></div>
+
+    <script type="text/javascript">
+      google.charts.load('current', { 'packages': ['bar'] });
+      google.charts.setOnLoadCallback(drawBarChart);
+
+      function drawBarChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['City', 'Population'],
+          ['London', 9648000],
+          ['Birmingham', 1153900],
+          ['Edinburgh', 554000]
+        ]);
+
+        var options = {
+          title: 'Population in 2023',
+          hAxis: { title: 'City' },
+          vAxis: { title: 'Population' },
+          colors: ['#1b9e77', '#d95f02', '#7570b3']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('bar_chart_div'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <div id="bar_chart_div" style="width: 400px; height: 300px;"></div>
+
+    <script type="text/javascript">
+      google.charts.load('current', { 'packages': ['columnchart'] });
+      google.charts.setOnLoadCallback(drawColumnChart);
+
+      function drawColumnChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Sales (in GBP)'],
+          ['January', 1200],
+          ['February', 1500],
+          ['March', 1800],
+          ['April', 1300],
+          ['May', 1400],
+          ['June', 1700],
+          ['July', 1600],
+          ['August', 1900],
+          ['September', 2100],
+          ['October', 2400],
+          ['November', 2000],
+          ['December', 2200]
+        ]);
+
+        var options = {
+          title: 'Monthly Sales in 2023',
+          hAxis: { title: 'Month' },
+          vAxis: { title: 'Sales (in GBP)' },
+          colors: ['#ff7f0e']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    <div id="column_chart_div" style="width: 800px; height: 400px;"></div>
+
+    <!-- Script for word display -->
+    <script>
+      function displayWord() {
+        var word = document.getElementById('wordInput').value;
+        document.getElementById('wordDisplay').innerHTML = word;
+      }
+    </script>
+
+    <!-- Script for random number generator -->
+    <script>
+      function generateRandomNumber() {
+        var randomNumber = Math.floor(Math.random() * 10) + 1;
+        document.getElementById('randomNumberDisplay').innerHTML = 'Random Number: ' + randomNumber;
+      }
+    </script>
+
+    <!-- Button to display word -->
+    <h3>Enter a word:</h3>
+    <input type="text" id="wordInput">
+    <button onclick="displayWord()">Display Word</button>
+    <p id="wordDisplay"></p>
+
+    
+
+  </body>
 
 </html>
