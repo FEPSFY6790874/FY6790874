@@ -4,119 +4,125 @@
 <head>
     <title>University of Surrey Engineering</title>
     <style>
+        /* Styles for tables */
         table {
             width: 30%;
             border-collapse: collapse;
         }
-
         table, th, td, tr {
             border: 1px solid black;
         }
-
         th, td {
             padding: 8px;
             text-align: left;
         }
-
         th {
             background-color: #f2f2f2;
         }
 
+        /* Styles for paragraphs */
         p.ex1 {
             margin-left: 250px;
             width: 80%;
             white-space: pre-line;
         }
 
-        .mySlides {
-            display: none;
-        }
-
+        /* Styles for navigation links */
         nav a {
             margin-right: 20px;
             text-decoration: none;
             color: #000;
         }
-
         nav a:hover {
             text-decoration: underline;
         }
 
+        /* Styles for sections */
         section {
             margin: 20px 0;
         }
 
-      /* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 5px;
-}
+        /* Slideshow styles */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+        .mySlide {
+            display: none;
+            position: relative;
+            animation: fadeEffect 1.5s;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: limegreen; /* Text color changed to lime green */
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(50, 205, 50, 0.7); /* Background color in lime green with some transparency */
+        }
 
-/* Hide the images by default */
-.mySlide {
-  display: none;
-  animation: fadeEffect 1.5s;
-}
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
 
-/* Fade animation */
-@keyframes fadeEffect {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
+        /* Fade animation */
+        @keyframes fadeEffect {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
 
-/* Next & Previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* Number text (1/5 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Add a background color to the active dot/circle */
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Style the dot/circle */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
+        /* Text overlay on top of slide images */
+        .text-overlay {
+            color: white;
+            font-size: 22px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+        }
     </style>
 </head>
 
 <body>
+  <img src="Unknown.png" alt="something gone wrong" width="1200" height="300">
+    <h1><b><i>Student URN: 6790874</b></i></h1>
+    <h2><b><i>Civil Eng</b></i></h2>
+    <h1><b><i>ENG0018 Computer lab 2023/24</i></b></h1>
+    <h2 style="font-family: Calibri;"><b><i>Conference paper: Bridge Types</i></b></h2>
+
     <!-- Header with Navigation Links -->
     <header style="background-color: #f2f2f2; padding: 10px 0; text-align: center;">
         <nav>
@@ -207,40 +213,52 @@
     <!-- Add any additional scripts or content here -->
     <!-- Slideshow Container -->
 <div class="slideshow-container">
-
-  <!-- Slides -->
+  <!-- Slide 1 -->
   <div class="mySlide fade">
-  <div class="numbertext">1 / 5</div>
-  <h2 style="text-align:center;">Building Bridge Success from Failure</h2>
-  <img src="Box-Girder-Bridge-Torr-Head-Fair-Head-in-Background.-Render-1024x705.jpg" alt="Bridges" style="width:100%">
-</div>
+    <div class="numbertext">1 / 5</div>
+    <img src="Box-Girder-Bridge-Torr-Head-Fair-Head-in-Background.-Render-1024x705.jpg" alt="Bridge Image" style="width:100%">
+    <div class="text-overlay">Building Bridge Success from Failure</div>
+  </div>
 
+  <!-- Slide 2 -->
   <div class="mySlide fade">
-  <div class="numbertext">2 / 5</div>
-  <h3>What is a Bridge?</h3>
-  <p>A bridge is a structure built to span a physical obstacle, like a river or road, without blocking the way underneath. It allows for the passage of traffic or transport over the obstacle.</p>
-  <h3>Why are Bridges Effective?</h3>
-  <p>Bridges are effective because they connect people and places, making transportation easier and helping communities grow and interact more efficiently.</p>
-</div>
+    <div class="numbertext">2 / 5</div>
+    <img src="istockphoto-1225009281-612x612.jpg" alt="Bridge" style="width:100%">
+    <div class="text-overlay">
+      <h3>What is a Bridge?</h3>
+      <p>A bridge is a structure built to span a physical obstacle, like a river or road, without blocking the way underneath. It allows for the passage of traffic or transport over the obstacle. Bridges are effective because they connect people and places, making transportation easier and helping communities grow and interact more efficiently.</p>
+    </div>
+  </div>
 
- <div class="mySlide fade">
-  <div class="numbertext">3 / 5</div>
-  <h3>Learning from Failures</h3>
-  <p>The Riverdale Bridge collapse in 1999 and the Tacoma Narrows Bridge in 1940 are key examples of engineering challenges. These incidents highlight the importance of considering environmental impacts and foundational strength in bridge design.</p>
-</div>
+  <!-- Slide 3 -->
+  <div class="mySlide fade">
+    <div class="numbertext">3 / 5</div>
+    <img src="istockphoto-149333562-612x612.jpg" alt="Bridge Failure" style="width:100%">
+    <div class="text-overlay">
+      <h3>Learning from Failures</h3>
+      <p>The Riverdale Bridge collapse in 1999 and the Tacoma Narrows Bridge in 1940 are key examples of engineering challenges. These incidents highlight the importance of considering environmental impacts and foundational strength in bridge design.</p>
+    </div>
+  </div>
 
-<div class="mySlide fade">
-  <div class="numbertext">4 / 5</div>
-  <h3>Success Stories</h3>
-  <p>The Millau Viaduct in France and the Akashi Kaikyō Bridge in Japan are remarkable examples of bridge engineering. They demonstrate how innovative design and attention to detail can lead to successful and enduring structures.</p>
-</div>
+  <!-- Slide 4 -->
+  <div class="mySlide fade">
+    <div class="numbertext">4 / 5</div>
+    <img src="istockphoto-177737930-612x612.jpg" alt="Bridge Success" style="width:100%">
+    <div class="text-overlay">
+      <h3>Success Stories</h3>
+      <p>The Millau Viaduct in France and the Akashi Kaikyō Bridge in Japan are remarkable examples of bridge engineering. They demonstrate how innovative design and attention to detail can lead to successful and enduring structures.</p>
+    </div>
+  </div>
 
-<div class="mySlide fade">
-  <div class="numbertext">5 / 5</div>
-  <h3>The Future of Bridge Building</h3>
-  <p>Looking ahead, bridges can be strengthened by using advanced materials, incorporating smart technology for real-time monitoring, and ensuring regular maintenance. These steps can significantly enhance the safety and longevity of bridges.</p>
-</div>
-
+  <!-- Slide 5 -->
+  <div class="mySlide fade">
+    <div class="numbertext">5 / 5</div>
+    <img src="large.jpg" alt="Bridge Future" style="width:100%">
+    <div class="text-overlay">
+      <h3>The Future of Bridge Building</h3>
+      <p>Looking ahead, bridges can be strengthened by using advanced materials, incorporating smart technology for real-time monitoring, and ensuring regular maintenance. These steps can significantly enhance the safety and longevity of bridges.</p>
+    </div>
+  </div>
 
   <!-- Next and Previous buttons -->
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
