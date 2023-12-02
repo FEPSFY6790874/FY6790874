@@ -44,17 +44,20 @@
 
         /* Slideshow styles */
         .slideshow-container {
-            max-width: 1000px;
-            position: relative;
-            margin: auto;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            border-radius: 5px;
-        }
-        .mySlide {
-            display: none;
-            position: relative;
-            animation: fadeEffect 1.5s;
-        }
+    max-width: 1000px; /* Adjust this width as necessary */
+    position: relative;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden; /* This will prevent any child elements from sticking out */
+}
+
+.mySlide {
+    display: none;
+    position: relative;
+    width: 100%; /* This ensures that the slide takes full width */
+    animation: fadeEffect 1.5s;
+}
         .prev, .next {
             cursor: pointer;
             position: absolute;
@@ -104,15 +107,16 @@
 
         /* Text overlay on top of slide images */
         .text-overlay {
-            color: white;
-            font-size: 22px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
-        }
+    color: white;
+    font-size: 22px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding is included within the width */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+}
         ul {
     list-style-type: disc; /* Adds bullet points */
     padding-left: 20px; /* Adjust as needed */
